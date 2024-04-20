@@ -930,3 +930,58 @@ function isLecturerAssignedToModule($lecturer_id, $module_id)
     // Return true if the count is greater than 0, indicating the lecturer is assigned to the module
     return $count > 0;
 }
+
+
+function getCountOfLecturers()
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) AS count FROM lecturers";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    return $row['count'];
+}
+
+function getCountOfStudents()
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) AS count FROM students";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    return $row['count'];
+}
+
+function getCountOfDepartments()
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) AS count FROM departments";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    return $row['count'];
+}
+
+function getCountOfPrograms()
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) AS count FROM programs";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    return $row['count'];
+}
+
+function getCountOfModules()
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) AS count FROM modules";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    return $row['count'];
+}
+
+function getCountOfTimetables()
+{
+    global $conn;
+    $sql = "SELECT COUNT(*) AS count FROM timetables";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    return $row['count'];
+}

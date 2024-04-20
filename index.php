@@ -2,7 +2,7 @@
 require 'functions.php';
 // Handle form submission
 $info = '';
-if(!isAdmin()){
+if (!isAdmin()) {
     header('Location: timetables.php');
 }
 ?>
@@ -30,42 +30,12 @@ if(!isAdmin()){
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Departments</h1>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#addDepartmentModal"> Add Department </button>
+                        <h1 class="h2">Dashboard</h1>
                     </div>
                     <?php echo $info; ?>
                     <div class="card shadow">
                         <div class="card-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $departments = getAllDepartments();
-                                    if ($departments) {
-                                        foreach ($departments as $department) {
-                                            echo "<tr>";
-                                            echo "<td>" . $department['department_id'] . "</td>";
-                                            echo "<td>" . $department['department_name'] . "</td>";
-                                            echo "<td>
-                                            <a href='edit_department.php?id=" . $department['department_id'] . "' class='btn btn-primary btn-sm'><i class='fa fa-edit'></i></a>
-                                            <a onclick='return confirm(\"Do you really want to delete?\")' href='?delete=" . $department['department_id'] . "' class='btn btn-danger btn-sm'><i class='fa fa-trash'></i></a>
-                                        </td>";
-                                            echo "</tr>";
-                                        }
-                                    } else {
-                                        echo "<tr><td colspan='3'>No departments found</td></tr>";
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
+                            <canvas id="countsChart" style="width: 100%;" height="400"></canvas>
                         </div>
                     </div>
                 </main>
@@ -96,6 +66,50 @@ if(!isAdmin()){
         <script src="./assets/js/jquery-3.6.1.min.js"></script>
         <script src="./assets/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/js/script.js"></script>
+        <script>
+            var ctx = document.getElementById('countsChart').getContext('2d');
+            var countsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Lecturers', 'Students', 'Departments', 'Programs', 'Modules', 'Timetables'],
+                    datasets: [{
+                        label: 'Counts',
+                        data: [
+                            <?php echo getCountOfLecturers(); ?>,
+                            <?php echo getCountOfStudents(); ?>,
+                            <?php echo getCountOfDepartments(); ?>,
+                            <?php echo getCountOfPrograms(); ?>,
+                            <?php echo getCountOfModules(); ?>,
+                            <?php echo getCountOfTimetables(); ?>
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
     </body>
 
 </html>
