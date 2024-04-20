@@ -4,7 +4,9 @@
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <h5 class="flex-grow-1 my-0 text-white ps-4">
+        Hi <?php echo $_SESSION['user_name']; ?> - <?php echo ucfirst($_SESSION['user_type']); ?>
+    </h5>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <a class="nav-link px-3" href="logout.php">Logout</a>
