@@ -66,6 +66,7 @@ if (!isAdmin()) {
         <script src="./assets/js/jquery-3.6.1.min.js"></script>
         <script src="./assets/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             var ctx = document.getElementById('countsChart').getContext('2d');
             var countsChart = new Chart(ctx, {
