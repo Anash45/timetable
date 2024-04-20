@@ -1,0 +1,19 @@
+the use of php,mysql,html, css is allowed 
+The system should include University undergraduate programmes. 
+ University have many departments 
+ Run various three year undergraduate programmes 
+ Each programme has a number (minimum 3) of modules per semester 
+ Each module will be managed by one or more lecturers.
+ Each module will have allocated room/lecture theatre or lab 
+ Working hours fall between Monday to Friday 09:00 – 05:00 
+ Sessions duration can be 1 – 4 hours, but no half hour starts or end sessions 
+ For a module, each session may require a different room (for example two hour in a Lecture theatre and 2 hours in a lab) You should be thinking about access rights and user roles. 
+ Students should be able to view their personal timetable 
+ Staff should be able to view their personal timetable 
+ Timetable administrators should be able to view/add/edit/update etc. 
+o They should be able to access staff details 
+o Should be able to access. Add, edit, remove room details 
+o Able to have access to programme details and modules 
+o Should be able to assign programmes, student group, rooms and staff to the module timetable 
+o Room capacity should be in-line with the total number of student enrolments on each individual module 
+o When necessary sessions may be duplicated to accommodate student numbers.
