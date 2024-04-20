@@ -182,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isAdmin() || isLecturer())) {
                                             // Action buttons based on user role
                                             if (isAdmin() || isLecturer()) {
                                                 echo "<td>
-                                                    <a href='edit_timetable.php?id=" . $timetable['timetable_id'] . "' class='btn btn-primary btn-sm'><i class='fa fa-edit'></i></a>
+                                                    <a href='edit_timetables.php?id=" . $timetable['timetable_id'] . "' class='btn btn-primary btn-sm'><i class='fa fa-edit'></i></a>
                                                     <a onclick='return confirm(\"Do you really want to delete?\")' href='?delete=" . $timetable['timetable_id'] . "' class='btn btn-danger btn-sm'><i class='fa fa-trash'></i></a>
                                                 </td>";
                                             }

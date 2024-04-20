@@ -3,7 +3,7 @@ require 'functions.php';
 // Handle form submission
 $info = '';
 if(!isAdmin()){
-    header('Location: timetable.php');
+    header('Location: timetables.php');
 }
 ?>
 <!doctype html>
