@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && (isAdmin() || isLecturer())) {
                         <h1 class="h2">Timetables</h1>
                         <!-- Button trigger modal -->
                         <?php
-                        if(isAdmin() && isLecturer()){
+                        if(isAdmin() || isLecturer()){
                             echo '<button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#addTimetableModal"> Add Timetable </button>';
                         }
