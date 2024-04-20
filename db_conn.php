@@ -1,9 +1,16 @@
 <?php
 // Database credentials
+
 $servername = "localhost";
-$username = "root";
-$password = "root";
-$database = "timetable_db";
+$username = "u956940883_timetable";
+$password = ";VGesS/4";
+$database = "u956940883_timetable";
+
+// // Database credentials
+// $servername = "localhost";
+// $username = "root";
+// $password = "root";
+// $database = "timetable_db";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
